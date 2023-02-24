@@ -19,7 +19,7 @@ https://github.com/Ascript89/gdpseditor-demonlist
 
 @font-face {
     font-family: 'OLnums';
-    src: url('../fonts/f1-superbold.ttf');
+    src: url('../fonts/rr-nums.ttf');
 }
 
 @font-face {
@@ -34,14 +34,13 @@ html, body {
 }
 
 body {
-    background-color: #122d3d;
+    background-color: #2d4452;
     color: white;
-    padding: 20px;
 }
 
 ::-webkit-scrollbar {width: 10px;}
-::-webkit-scrollbar-track {background: #00000000;}
-::-webkit-scrollbar-thumb {background: #2c5479;opacity:70%;transition:200ms;}
+::-webkit-scrollbar-track {background: #122d3d;}
+::-webkit-scrollbar-thumb {background: #2c5479;opacity:70%;transition:200ms;border-radius:50px;}
 ::-webkit-scrollbar-thumb:hover {background: #376896;opacity:100%;}
 
 .mobile-warning {
@@ -57,28 +56,34 @@ body {
 }
 
 nav {
-    background-color: #2d4452;
+    background-color: #2d4452cd;
+    backdrop-filter: blur(5px);
     background-image: url('../assets/Extreme_Demon.png');
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: center;
     background-size: 10%;
-    padding: 10px;
+    color: white;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-    position: sticky;
-    top: 10px;
-    border-radius: 15px;
+    position: fixed;
+    top: 0;
     z-index: 10;
+    width: 100vw;
+    height: 40px;
 }
 
 nav img {
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 10px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-5px, 7px);
+    box-shadow: 1px 1px 10px black;
 }
 
 nav .nav-title1 {
+    margin-left: 70px;
     font-weight: bold;
 }
 
@@ -89,7 +94,7 @@ nav .nav-title2 {
 }
 
 nav a {
-    background-color: hsl(203, 29%, 30%);
+    background-color: hsl(203, 29%, 40%);
     color: #adefff;
     text-decoration: none;
     margin-right: 10px;
@@ -99,29 +104,34 @@ nav a {
 }
 
 nav a:hover {
-    background-color: hsl(203, 29%, 40%);
-    text-decoration: 2px solid underline;
+    background-color: hsl(203, 29%, 50%);
 }
 
 #myInput {
-    background-color: #333;
-    color: white;
-    padding: 7px;
+    background-image: url('../assets/search-contained.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    background-color: #486d84;
+    color: #adefff;
+    padding: 7px;  padding-left: 30px;
     border: none;
     outline: none;
     border-radius: 5px;
-    margin-top: 8px;
-    width: 150px;
-    transition: 250ms;
+    width: 200px;
+    transition: 500ms;
     float: right;
 }
 
 #myInput:focus {
-    background-color: white;
-    color: dimgray;
-    border-bottom: 3px solid #272727;
-    width: 300px;
-    font-size: 18px;
+    background-color: hsl(203, 29%, 50%);
+    background-position: right center;
+    padding-left: 7px;
+    padding-right: 30px;
+}
+
+#myInput::-webkit-input-placeholder {
+    color: #adefff;
 }
 
 .home-banner {
@@ -130,80 +140,89 @@ nav a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px;
-    margin-top: -11px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    margin-top: 60px;
     text-shadow: #000 2px 2px 10px;
     font-weight: 900;
     font-size: 40px;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 #lc {
     list-style-position: inside;
     font-family: 'OLnums';
-    font-size: 40px;
     padding: 0;
+    margin: 0;
+}
+
+#lc li::marker {
+    font-size: 2rem;
+    font-weight: 900;
+    font-style: italic;
 }
 
 #lc li {
-    padding: 30px;
-    border-radius: 20px;
-    background-color: dimgray;
-    margin-bottom: 10px;
+    padding-left: 30px;
+    background-image: linear-gradient(to right, dimgray, #122d3d, #122d3d, #122d3d, #122d3d);
 }
 
-#lc li:nth-child(1) {background-color: goldenrod !important;}
-#lc li:nth-child(2) {background-color: silver !important;}
-#lc li:nth-child(3) {background-color: #b87333 !important;}
-
-/* Lo que hay aquí abajo de nth-child 4 y 5, es para que los
-demons en los puestos 4 y 5 aparezcan con el color del trofeo
-verde de Geometry Dash, esta deshabilitado, pero si lo quieres
-habilitar solo quitar esto que se encuentra entre esas dos lineas --> /*  */ 
-
-/*
-#lc li:nth-child(4) {background-color: #6ea06e !important;}
-#lc li:nth-child(5) {background-color: #6ea06e !important;}
-*/
+#lc li:nth-child(1) {background-image: linear-gradient(to right, goldenrod, #122d3d, #122d3d, #122d3d, #122d3d);}
+#lc li:nth-child(2) {background-image: linear-gradient(to right, silver, #122d3d, #122d3d, #122d3d, #122d3d);}
+#lc li:nth-child(3) {background-image: linear-gradient(to right, #b87333, #122d3d, #122d3d, #122d3d, #122d3d);}
 
 .li-content {
-    background-color: #122d3d;
-    border-radius: 20px;
-    padding: 10px 20px;
+    background-image: linear-gradient(to right, #122d3d, #122d3d, #122d3d, #122d3d00, #122d3d00);
+    padding: 10px 5px 10px 10px;
     font-family: 'Regular';
     font-size: initial;
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    width: 82vw;
-    float: right;
-    margin-top: -17.5px;
+    box-sizing: border-box;
+    clip-path: polygon(5% 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .li-content img {
     height: 60px;
     margin-right: 20px;
+    transform: translateX(-20px);
+}
+
+.ic-group {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto auto;
+    width: max-content;
+}
+
+.grid-ic {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
 }
 
 .li-content label {
     font-size: 30px;
     font-family: 'OLtitle';
     font-weight: 600;
+    text-overflow: clip;
 }
 
 .li-content span {
-    opacity: 80%;
-    margin-top: 5px;
-    margin-left: 15px;
+    opacity: 60%;
     font-size: 18px;
 }
  
 .li-content .yt {
     background-color: #e22929;
     color: white;
-    position: absolute;
-    right: 100px;
+    text-align: center;
     padding: 5px 15px;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     text-decoration: none;
     transition: 200ms;
 }
@@ -215,11 +234,11 @@ habilitar solo quitar esto que se encuentra entre esas dos lineas --> /*  */
 .li-content .id {
     background-color: gray;
     color: white;
-    position: absolute;
-    right: 280px;
     padding: 5px 15px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     text-decoration: none;
+    text-align: center;
     transition: 200ms;
     outline: none;
     border: none;
@@ -240,6 +259,39 @@ habilitar solo quitar esto que se encuentra entre esas dos lineas --> /*  */
     font-size: initial !important;
 }
 
+.featured {
+    text-shadow: gold 0 0 10px;
+}
+
+.epic {
+    text-shadow: gold 0 0 20px;
+    color: rgb(255, 227, 136);
+}
+
+.godlike {  /* wtf */
+    background-image: linear-gradient(to bottom, white, rgb(0, 213, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: rgb(0, 85, 255) 0 0 30px;
+    animation: godlike 2s ease-in-out infinite;
+}
+
+@keyframes godlike {
+    0% {
+        letter-spacing: 0px;
+        transform: translateY(0px);
+    }
+    50% {
+        letter-spacing: 0px;
+        transform: translateY(-5px);
+    }
+    100% {
+        letter-spacing: 0px;
+        transform: translateY(0px);
+    }
+}
+
 footer {
     background-image: url("../assets/banner.jpg");
     background-position: center;
@@ -248,7 +300,6 @@ footer {
     padding: 40px;
     padding-bottom: 60px;
     line-height: 8px;
-    border-radius: 15px;
 }
 
 footer p {
@@ -272,4 +323,36 @@ footer a {
 
 footer a:hover {
     background-color: hsl(0, 0%, 30%);
+}
+
+input.toggle[type='checkbox'] {
+    display: none;
+}
+
+.lbl-toggle {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    background: #2d4452;
+    transition: all 0.25s ease-out;
+    opacity: 0.7;
+}
+
+.toggle:checked+.lbl-toggle::before {
+    transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.toggle:checked+.lbl-toggle+.collapsible-content {
+    max-height: max-content;
 }

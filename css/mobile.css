@@ -10,30 +10,53 @@ https://github.com/Ascript89/gdpseditor-demonlist
 
 */
 
+@media only screen and (min-width: 1300px) {
+    .lbl-toggle {pointer-events: none;}
+}
+
 @media only screen and (max-width: 900px) {
+    ::-webkit-scrollbar {
+        width: 0px !important;
+        height: 0px;
+    }
+    nav {
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+    nav img {
+        height: 40px !important;
+        position: initial !important;
+        transform: translate(0, 0) !important;
+        margin-right: 20px;
+    }
     .nav-title1, .nav-title2 {display: none;}
     #myInput {
         float: left !important;
-        padding: 10px !important;
-        margin-top: 100px !important;
-        width: 200px !important;
+        border-radius: 5px !important;
+        margin-right: 20px;
     }
-    .home-banner {margin-bottom: 140px !important;}
+    .home-banner {display: none !important;}
+    .grid-container {
+        margin-top: 60px;
+        grid-template-columns: auto !important;
+    }
+    .ic-group {
+        grid-template-columns: auto !important;
+    }
     #lc {font-size: 25px !important;}
-    .li-content {width: 50vw !important;}
+    .li-content {
+        width: 70vw !important;
+        clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0% 100%) !important;
+    }
     .li-content img {height: 40px !important;}
     .li-content .yt , .li-content .id {
-        margin: 100px 0px 0px 0px;
-        padding: 10px 20px !important;
+        padding: 7px 20px !important;
+        width: fit-content !important;
     }
-    .li-content .yt {right: 20px !important;}
-    .li-content .id {right: 190px !important;}
-    .li-content label {font-size: 15px !important;}
-    li {margin-bottom: 60px !important;}
+    .li-content .yt {
+        padding: 7px 23.25px !important;
+    }
+    .li-content label {font-size: 20px !important;}
     footer {line-height: 25px !important;}
     footer a {margin: -30px -30px 0px 0px !important;}
-}
-
-@media only screen and (max-width: 360px) {
-    .mobile-warning {display: block !important;}
 }
